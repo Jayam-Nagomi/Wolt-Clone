@@ -10,12 +10,13 @@ const Layout = () => {
         />
         <Stack.Screen 
           name='other-options' 
-          options={{ headerShown: false, 
+          options={{ 
+            // headerShown: false, 
             presentation: 'formSheet',
-            title: '',
+            // title: '',
             sheetAllowedDetents: [0.6],
             sheetCornerRadius: 16,
-            headerShadowVisible: false,
+            // headerShadowVisible: false,
           }}
         />
     </Stack>
