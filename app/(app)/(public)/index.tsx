@@ -1,5 +1,6 @@
 import AppleAuthButton from '@/components/auth/AppleAuthButton';
 import GoogleAuthButton from '@/components/auth/GoogleAuthButton';
+import SmoothInfiniteScroll from '@/components/SmoothInfiniteScroll';
 import { Colors, Fonts } from '@/constants/theme';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Link } from 'expo-router';
@@ -13,6 +14,15 @@ export default function Index() {
   return (
     <View style={styles.container}>
       <View style={styles.infiniteScrollContainer}>
+        <View>
+          <SmoothInfiniteScroll scrollDirection="down" iconSet="set1" />
+        </View>
+        <View>
+          <SmoothInfiniteScroll scrollDirection="up" iconSet="set2" />
+        </View>
+        <View>
+          <SmoothInfiniteScroll scrollDirection="down" iconSet="set3" />
+        </View>
         <LinearGradient
           colors={['transparent', '#fff']}
           style={{

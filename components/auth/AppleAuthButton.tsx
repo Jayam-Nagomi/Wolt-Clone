@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 const AppleAuthButton = () => {
   return (
     <TouchableOpacity style={styles.appleButton}>
-      <Ionicons name="logo-google" size={18} color={'#fff'} />
+      <Ionicons name="logo-apple" size={18} color={'#fff'} />
       <Text style={styles.appleButtonText}>Sign in with Apple</Text>
     </TouchableOpacity>
   );
