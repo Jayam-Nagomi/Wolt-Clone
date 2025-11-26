@@ -4,7 +4,20 @@ import React from 'react'
 const Layout = () => {
   return (
     <Stack>
-        <Stack.Screen name='index' options={{ headerShown: false, contentStyle: { backgroundColor: '#ffff' } }}></Stack.Screen>
+        <Stack.Screen 
+          name='index' 
+          options={{ headerShown: false, contentStyle: { backgroundColor: '#ffff' } }}
+        />
+        <Stack.Screen 
+          name='other-options' 
+          options={{ headerShown: false, 
+            presentation: 'formSheet',
+            title: '',
+            sheetAllowedDetents: [0.6],
+            sheetCornerRadius: 16,
+            headerShadowVisible: false,
+          }}
+        />
     </Stack>
   )
 }
