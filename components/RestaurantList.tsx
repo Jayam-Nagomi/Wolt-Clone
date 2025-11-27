@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     },
     description: {
         fontSize: 14,
-        color: '#666'
+        color: Colors.muted
     },
     metadata: {
         borderTopColor: Colors.light,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     },
     metadataText: {
         fontSize: 13,
-        color: '#666'
+        color: Colors.muted
     },
     dot: {
         color: '#999',

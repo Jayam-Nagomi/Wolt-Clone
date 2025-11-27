@@ -2,14 +2,26 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import {CategoryList} from '../CategoryList'
 import RestaurantList from '../RestaurantList'
-import Animated from 'react-native-reanimated'
+import Animated, { useAnimatedScrollHandler, useSharedValue } from 'react-native-reanimated'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import {Fonts} from '@/constants/theme'
+import RestaurantHeader from '../RestaurantHeader'
 const RestaurantListPage = () => {
   const insets = useSafeAreaInsets();
+  const scrollOffset = useSharedValue(0);
+
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: (event) => {
+        scrollOffset.value = event.contentOffset.y;
+    }
+  })
   return (
     <View style={styles.container}>
-      <Animated.ScrollView showsVerticalScrollIndicator={false}
+    <RestaurantHeader title='Restaurants' scrollOffset={scrollOffset}/>
+      <Animated.ScrollView 
+      onScroll={scrollHandler}
+      scrollEventThrottle={16}
+      showsVerticalScrollIndicator={false}
       contentContainerStyle={{paddingTop: insets.top + 60}}>
         <Text style = {styles.pageTitle}>Restaurants</Text>
         <CategoryList />
@@ -31,6 +43,7 @@ const styles = StyleSheet.create({
         fontFamily: Fonts.brandBlack,
         fontSize: 30,
         marginBottom: 16,
+        marginTop: 30,
         paddingHorizontal: 16,
     },
     allRestaurantsTitle: {
